@@ -64,7 +64,7 @@
              conn = ConexaoDb.getConnection();
 
             // obs. a ordem dos parametros deve ser passada conforme a referencia na consulta sql
-            System.out.println(conn, "Select * from cargo where id_cargo=? or descricao like ? ", 1, "%ixa"));
+            System.out.println(BriefDb.query(conn, "Select * from cargo where id_cargo=? or descricao like ? ", 1, "%ixa"));
 
             /* Resposta caso execute o comando: [{ID_CARGO=11, DESCRICAO=Frente de caixa}, {ID_CARGO=1, 
             DESCRICAO=Gerente}, {ID_CARGO=28, DESCRICAO=caixa}, {ID_CARGO=3, DESCRICAO=caixa}] */
