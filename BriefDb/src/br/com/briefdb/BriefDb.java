@@ -45,6 +45,27 @@ public class BriefDb {
      public static void autoCloseOn(){
      BriefDb.close=true;
     }
+    
+    
+      public static ArrayList query(Connection conn, String query) throws Exception {
+        PreparedStatement stm = conn.prepareStatement(query);
+        ResultSet rst = stm.executeQuery();
+        ResultSetMetaData meta = rst.getMetaData();
+        ArrayList<HashMap<String, Object>> tabela = new ArrayList<>();
+        while (rst.next()) {
+            HashMap<String, Object> linha = new HashMap<>();
+            for (int x = 1; x <= meta.getColumnCount(); x++) {
+                linha.put(meta.getColumnName(x).toUpperCase(), rst.getObject(meta.getColumnName(x)));
+            }
+            tabela.add(linha);
+        }
+        rst.close();
+        stm.close();
+        if(BriefDb.close){
+        conn.close();
+        }
+        return tabela;
+    }
 
 
     public static ArrayList query(Connection conn, String query, Object... filter) throws Exception {
