@@ -1,6 +1,6 @@
 <h2>Classe de manipulação de DQL e DML</h2>
 
-<p> Esta biblioteca tem como finalidade simplificar o processo de escrita de algumas das funções básicas de consulta e alteração de dados no banco de dados. </p>
+<p> Esta biblioteca tem como finalidade simplificar o processo de escrita de algumas das funções básicas de consulta e alteração de dados. </p>
 <p><a href="https://github.com/wellingtonsluzhotmailcom/BriefDb/raw/master/BriefDb.jar" download="download"> Clique aqui para fazer o download</a>. </p>
 <hr />
 
